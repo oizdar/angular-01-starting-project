@@ -3,6 +3,7 @@ import { HeaderComponent } from "./header/header.component";
 import { UserComponent } from "./user/user.component";
 import { DUMMY_USERS } from "./dummy-users";
 import { TasksComponent } from "./tasks/tasks.component";
+import { NewTaskComponent } from "./tasks/new-task/new-task.component";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import { TasksComponent } from "./tasks/tasks.component";
   imports: [
     HeaderComponent,
     UserComponent,
-    TasksComponent
+    TasksComponent,
+    NewTaskComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -22,6 +24,7 @@ export class AppComponent {
   get selectedUserName() {
     return this.selectedUser?.name;
   }
+
   onSelectUser(id: string) {
     this.selectedUser = this.users.find(user => user.id === id);
   }
